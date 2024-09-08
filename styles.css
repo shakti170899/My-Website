@@ -1,67 +1,138 @@
-/* General Body Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f4f8;
+    background-color: #ffffff;
 }
 
-/* Header */
 header {
-    background: linear-gradient(135deg, #ff6f61, #de64d6);
+    background-color: #26a1b7;
     color: white;
-    padding: 20px;
+    padding: 10px 0;
     text-align: center;
-    border-bottom: 2px solid #de64d6;
 }
 
-.header-content h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-.header-content p {
-    margin: 5px 0 0;
-}
-
-/* Main Content */
 main {
     padding: 20px;
-    text-align: center;
 }
 
-.video-section {
-    margin: 20px auto;
-}
-
-.video-section h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-/* Video Iframe */
-iframe {
+.login-section {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 315px; /* Adjust height as needed */
-    max-width: 640px; /* Maximum width of the video */
-    border: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 10;
 }
 
-/* Footer */
+.login-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('D:/Backup Video TikTok 2019/IMG_20210216_134904.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px); /* Blur effect */
+    z-index: -1; /* Ensure it's behind the content */
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    text-align: center ;
+    animation: slideIn 5s ease-out;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #26a1b7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-container button:hover {
+    background-color: #1e8694;
+}
+
+.login-container .links {
+    margin-top: 10px;
+}
+
+.login-container .links a {
+    color: #26a1b7;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+}
+
+.login-container .links a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.video-container {
+    width: 300px;
+    margin: 10px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 footer {
-    background-color: #333;
+    background-color: #26a1b7;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 10px 0;
     position: fixed;
-    width: 100%;
     bottom: 0;
-}
-
-/* Responsive Styles */
-@media (max-width: 600px) {
-    .video-section iframe {
-        height: 200px; /* Adjust height for smaller screens */
-    }
+    width: 100%;
 }
