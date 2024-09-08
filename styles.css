@@ -1,9 +1,67 @@
-/* Example CSS for video */
-video {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #ff6f61, #de64d6);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #de64d6;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.header-content p {
+    margin: 5px 0 0;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.video-section {
+    margin: 20px auto;
+}
+
+.video-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Video Iframe */
+iframe {
+    width: 100%;
+    height: 315px; /* Adjust height as needed */
+    max-width: 640px; /* Maximum width of the video */
+    border: none;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .video-section iframe {
+        height: 200px; /* Adjust height for smaller screens */
+    }
 }
