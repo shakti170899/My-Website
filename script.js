@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Array of video URLs from Google Drive
     const videoUrls = [
         "https://drive.google.com/file/d/19m5W6Ua3I_AUrNKhkqWRjEEGryA1Gn0x/view?usp=drive_link", // Example video URL
-        "https://drive.google.com/file/d/1AbcdefGhijkLmnopQrstuVwxYz123456/preview", // Add more video URLs here
+        "https://www.youtube.com/watch?v=F2pw1NjZhjQ", // Add more video URLs here
         "https://drive.google.com/file/d/2XyZzAbcdefGhijklmnopQRstu/preview" // Add more video URLs here
     ];
 
