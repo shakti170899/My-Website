@@ -1,16 +1,24 @@
-document.getElementById('login-button').addEventListener('click', function() {
-    const userId = document.getElementById('user-id').value;
-    const password = document.getElementById('password').value;
+document.addEventListener('DOMContentLoaded', () => {
+    const loginButton = document.getElementById('login-button');
+    const loginError = document.getElementById('login-error');
 
-    const validUserId = 'SD12345';
-    const validPassword = 'SD@12345';
+    loginButton.addEventListener('click', () => {
+        // Retrieve values from input fields
+        const userId = document.getElementById('user-id').value;
+        const password = document.getElementById('password').value;
 
-    const errorElement = document.getElementById('login-error');
+        // Dummy login credentials
+        const validUserId = 'SD12345';
+        const validPassword = 'SD@12345';
 
-    if (userId === validUserId && password === validPassword) {
-        window.location.href = 'main_page.html';
-    } else {
-        errorElement.textContent = 'Invalid User ID or Password.';
-        errorElement.style.display = 'block';
-    }
+        // Validate credentials
+        if (userId === validUserId && password === validPassword) {
+            // Redirect to the main page on successful login
+            window.location.href = 'main-page.html';
+        } else {
+            // Show error message
+            loginError.textContent = 'Invalid User ID or Password';
+            loginError.style.display = 'block';
+        }
+    });
 });
