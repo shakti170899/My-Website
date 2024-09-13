@@ -1,52 +1,128 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const userID = document.getElementById('userID').value;
-    const password = document.getElementById('password').value;
-    
-    // Define the valid credentials
-    const validCredentials = [
-        { userID: 'Shakti17', password: 'SD@12345' },
-        { userID: 'Wood_17', password: 'BD@12345' },
-        { userID: 'Cshakti17', password: 'CD12345' } // Added new credentials
-    ];
-    
-    // Check if the entered credentials match any of the valid credentials
-    const isValid = validCredentials.some(cred => cred.userID === userID && cred.password === password);
-    
-    if (isValid) {
-        alert('Hi Fu*king Wooden House Member, Press Enter And Enter Your Childhood!');
-        // Hide the login section and show the gallery section
-        document.getElementById('loginSection').style.display = 'none';
-        document.getElementById('gallery').style.display = 'flex';
-        
-        // Populate the gallery with videos
-        createVideoElements();
-    } else {
-        alert('Boka*hoda Password Vul Diyechis.');
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://images.moneycontrol.com/static-mcnews/2022/12/Flipkart.jpg?impolicy=website&width=770&height=431');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Container for landscape layout */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+    display: flex; /* Horizontal layout */
+    align-items: center;
+    justify-content: space-between;
+    width: 80%; /* Take up more horizontal space */
+    max-width: 1200px;
+    gap: 40px; /* Space between the image and the form */
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Login image with blur effect */
+.login-image {
+    width: 700px;
+    height: 500px;
+    border-radius: 0px;
+    filter: blur(0px);
+    transition: filter 0.3s;
+}
+
+.login-image:hover {
+    filter: blur(0);
+}
+
+/* Input fields and form styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align form items to the left */
+}
+
+.login-form label {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.login-form input {
+    margin: 10px 0;
+    padding: 12px;
+    width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.login-form input:focus {
+    border: 2px solid #4CAF50;
+    outline: none;
+}
+
+/* Login button styling */
+button {
+    padding: 12px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 80%;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Forgot password link */
+a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #4CAF50;
+}
+
+/* Error message */
+.error-message {
+    color: red;
+    display: none;
+}
+
+/* Footer styling */
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 0;
+    font-size: 12px;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-});
-
-function createVideoElements() {
-    const videoPaths = [
-    "https://www.youtube.com/watch?v=2n00wX0cj0w", 
-];
-
-const gallery = document.querySelector('.gallery');
-
-videoPaths.forEach(path => {
-    const videoContainer = document.createElement('div');
-    videoContainer.classList.add('video-container');
-    
-    const video = document.createElement('video');
-    video.controls = true;
-    
-    const source = document.createElement('source');
-    source.src = path;
-    source.type = 'video/mp4';
-    
-    video.appendChild(source);
-    videoContainer.appendChild(video);
-    gallery.appendChild(videoContainer);
-});
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
